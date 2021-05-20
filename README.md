@@ -9,6 +9,7 @@ You can go to [http://127.0.0.1/docs](http://127.0.0.1/docs)  after spinning up 
 You will see the automatic interactive API documentation (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)):
 
 ![usage](usage.gif)
+
 ## Quick start - Using Docker
 
 ### Build your Image
