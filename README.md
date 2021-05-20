@@ -4,7 +4,7 @@ This project showcases the use of `FastAPI` as the backend. The QA model is depl
 
 ## Interactive API docs
 
-You can go to [http://127.0.0.1/docs](http://127.0.0.1/docs)  after spinning up the application from local machine or docker host.
+Navigate to [http://127.0.0.1/docs](http://127.0.0.1/docs) after spinning up the application from local machine or docker host.
 
 You will see the automatic interactive API documentation (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)):
 
