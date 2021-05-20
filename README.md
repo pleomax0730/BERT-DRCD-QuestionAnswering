@@ -1,6 +1,6 @@
 # 🤗 BERT-DRCD-QuestionAnswering
 
-This project showcases the use of `FastAPI` as the backend. The QA model is deployed using the FastAPI REST service and containerized using `Docker`.
+This project showcases the use of `FastAPI` as the backend. The [QA model](https://huggingface.co/nyust-eb210/braslab-bert-drcd-384) is deployed using the FastAPI REST service and containerized using `Docker`.
 
 ## Interactive API docs
 
