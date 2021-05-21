@@ -1,4 +1,3 @@
-# FROM python:3.8-slim-buster
 FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
 # copy "app" to "container/app"
@@ -6,6 +5,7 @@ COPY ./app /app
 
 COPY ./requirements.txt /app
 
+# cd "app"
 WORKDIR /app
 
 EXPOSE 80
