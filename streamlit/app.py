@@ -5,8 +5,8 @@ import requests
 st.title("BERT DRCD QuestionAnswering")
 
 
-backend_pred_url = "http://fastapi:8000/predict/"
-
+# backend_pred_url = "http://fastapi:8000/predict/"
+backend_pred_url = "http://127.0.0.1:8000/predict/"
 
 with st.form("input_area"):
 

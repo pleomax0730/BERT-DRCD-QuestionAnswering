@@ -1,32 +1,33 @@
 # 🤗 BERT-DRCD-QuestionAnswering
 
-This project showcases the use of `FastAPI` as the backend. The [QA model](https://huggingface.co/nyust-eb210/braslab-bert-drcd-384) is deployed using the FastAPI REST service and containerized using `Docker`.
+This project features `FastAPI` as the backend and `Streamlit` as the frontend. Our streamlit UI will send the post request to the backend and receive the response. The [QA model](https://huggingface.co/nyust-eb210/braslab-bert-drcd-384) is deployed using the FastAPI REST service and containerized using `Docker`. The streamlit UI is also hosted on its own Docker container.
+
+We spin both the containers together using `Docker Compose`.
+
+## Streamlit UI
+
+Navigate to [http://127.0.0.1:8501/](http://127.0.0.1:8501/) after spinning up the application from local machine or docker host.
+
+![ui](ui.gif)
 
 ## Interactive API docs
 
-Navigate to [http://127.0.0.1/docs](http://127.0.0.1/docs) after spinning up the application from local machine or docker host.
+Navigate to [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs) after spinning up the application from local machine or docker host.
 
 You will see the automatic interactive API documentation (provided by [Swagger UI](https://github.com/swagger-api/swagger-ui)):
 
 ![usage](usage.gif)
 
-## Quick start - Using Docker
+## Quick start - Using Docker Compose
 
-### Build your Image
+### Running Docker applications
 
-* Go to the project directory
-* Build your FastAPI image
-
-```bash
-docker build -t $your-image-name .
-```
-
-### Start the Docker container
-
-* Run a container based on your image
+Spin up our containers in detached mode.
 
 ```bash
-docker run -d --name $your-container-name -p 80:80 $your-image-name
+docker-compose up -d
+docker ps             # To check the running containers
+docker-compose down   # To shutdown the running containers
 ```
 
 ## Quick start - Local Machine
@@ -36,7 +37,7 @@ docker run -d --name $your-container-name -p 80:80 $your-image-name
 *Create your virtual environment beforehand as a best practice.*
 
 * Go to the project directory
-* Install the requirements
+* Install the requirements for both FastAPI and Streamlit
 
 ```bash
 pip install -r requirements.txt
@@ -44,9 +45,20 @@ pip install -r requirements.txt
 
 ### Start the FastAPI server
 
-* Go to the "app" directory
+* Go to the "fastapi" directory
 * Run the following command
 
 ```bash
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
+
+### Start the Streamlit server
+
+* Go to the "streamlit" directory
+* Run the following command
+* You should change the backend_pred_url in app.py to "http://127.0.0.1:8000/predict/" if running locally
+
+```bash
+streamlit run app.py
+```
+
