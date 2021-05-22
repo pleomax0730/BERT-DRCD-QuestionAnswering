@@ -1,6 +1,6 @@
 from fastapi import FastAPI, Depends
 from pydantic import BaseModel
-from api.model import get_model, QAModel
+from .api.model import get_model, QAModel
 
 app = FastAPI()
 
